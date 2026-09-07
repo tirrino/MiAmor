@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Ti ✿</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#FFF7FB; --pink:#FFD6E5; --pink2:#F7B9CE; --rose:#EB7DA8;
+ --text:#80566D; --glass:rgba(255,255,255,.68);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ font-family:Poppins,sans-serif;color:var(--text);
+ background:linear-gradient(180deg,#fff8fc,#ffe8f1,#fff9fc);
+ overflow-x:hidden;
+}
+body::before{
+ content:"";position:fixed;inset:0;
+ background:
+ radial-gradient(circle at 10% 10%,#ffdbe850 0 12%,transparent 13%),
+ radial-gradient(circle at 90% 20%,#ffe9f250 0 10%,transparent 11%),
+ radial-gradient(circle at 70% 80%,#ffd2e350 0 12%,transparent 13%);
+ pointer-events:none;
+}
+.petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:-1}
+.petal{position:absolute;color:#f2a7c3;animation:fall linear infinite}
+@keyframes fall{
+ from{transform:translateY(-15vh) rotate(0deg)}
+ to{transform:translateY(120vh) rotate(360deg)}
+}
+.hero{
+ min-height:100vh;display:flex;justify-content:center;align-items:center;padding:40px;
+}
+.hero-card{
+ background:var(--glass);backdrop-filter:blur(18px);
+ border:1px solid rgba(255,255,255,.8);
+ border-radius:40px;padding:55px;max-width:760px;text-align:center;
+ box-shadow:0 25px 60px rgba(232,132,171,.18);
+}
+.script{font-family:"Great Vibes";font-size:5rem;color:var(--rose)}
+.hero p{margin:20px 0 30px;line-height:1.8}
+.btn{
+ display:inline-block;padding:15px 28px;border-radius:999px;
+ background:linear-gradient(90deg,#f7b4ca,#eb84ad);
+ color:white;text-decoration:none;font-weight:600;
+ box-shadow:0 8px 20px rgba(235,132,173,.25)
+}
+section{padding:90px 8%}
+.container{max-width:1100px;margin:auto}
+.card{
+ background:var(--glass);backdrop-filter:blur(16px);
+ border-radius:32px;padding:35px;
+ border:1px solid rgba(255,255,255,.8);
+ box-shadow:0 15px 45px rgba(236,150,184,.18)
+}
+h2{
+ font-family:"Great Vibes";font-size:3.2rem;color:var(--rose);margin-bottom:15px
+}
+.letter textarea{
+ width:100%;height:380px;background:#fffafb;border:none;border-radius:24px;
+ padding:22px;font-size:1rem;color:var(--text);resize:vertical
+}
+.gallery{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px
+}
+.polaroid{
+ background:white;padding:12px;border-radius:20px;
+ box-shadow:0 12px 20px rgba(0,0,0,.08)
+}
+.photo{
+ height:230px;border:2px dashed #f6bfd2;border-radius:14px;
+ display:flex;align-items:center;justify-content:center;background:#fff8fb;color:#cc7a9c
+}
+.photo img{
+ width:100%;height:100%;display:block;object-fit:cover;border-radius:12px
+}
+.caption{text-align:center;margin-top:12px;font-size:.95rem}
+.timeline{display:grid;gap:22px;margin-top:20px}
+.moment{
+ display:flex;gap:18px;align-items:flex-start;background:#fff8fb;
+ padding:18px;border-radius:20px
+}
+.circle{
+ width:18px;height:18px;background:linear-gradient(#eb7da8,#f4b2ca);
+ border-radius:50%;margin-top:8px;flex-shrink:0
+}
+.notes{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px
+}
+.note{
+ background:#fff9fc;padding:18px;border-radius:18px;
+ border:1px solid #ffd7e7;transform:rotate(var(--rot));
+ box-shadow:0 8px 15px rgba(236,170,190,.15)
+}
+.promise-grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px
+}
+.promise{
+ background:linear-gradient(180deg,#fffafb,#ffeef5);
+ padding:20px;border-radius:22px
+}
+.jar{
+ background:#fffafb;border-radius:30px;padding:25px;text-align:center
+}
+.jar button{
+ margin-top:18px;padding:12px 20px;border:none;border-radius:999px;
+ background:#f6a8c5;color:white;font-weight:600;cursor:pointer
+}
+#memory{
+ margin-top:20px;padding:16px;border-radius:16px;background:#fff;
+ min-height:70px;color:#9b5b79
+}
+.quote{
+ text-align:center;font-size:2.4rem;font-family:"Great Vibes";
+ color:#e07aa4;padding:90px 15px
+}
+footer{text-align:center;padding:60px;color:#9d6880}
+.music{
+ position:fixed;right:24px;bottom:24px;z-index:999;
+ display:flex;align-items:center;gap:12px;
+ min-width:220px;padding:10px 12px 10px 10px;
+ background:rgba(255,255,255,.82);
+ border:1px solid rgba(255,255,255,.95);
+ border-radius:22px;
+ box-shadow:0 14px 35px rgba(177,93,127,.2);
+ backdrop-filter:blur(18px);
+ transition:transform .3s ease,box-shadow .3s ease,width .4s ease,
+  min-width .4s ease,height .4s ease,padding .4s ease,border-radius .4s ease;
+ }
+.music:hover{
+ transform:translateY(-3px);
+ box-shadow:0 18px 40px rgba(177,93,127,.26)
+}
+.music.min{
+ min-width:0;width:54px;height:46px;padding:0;
+ justify-content:center;border-radius:14px;
+ background:transparent;border-color:transparent;
+ box-shadow:none;overflow:hidden
+}
+.music #playPause,.music .info{
+ transition:opacity .25s ease,transform .35s ease,width .4s ease;
+}
+.music.min #playPause,.music.min .info{
+ opacity:0;transform:scale(.75);pointer-events:none;width:0;
+ overflow:hidden;margin:0;padding:0
+}
+.music button{
+ border:none;display:grid;place-items:center;width:40px;height:40px;
+ border-radius:14px;background:linear-gradient(135deg,#ef8db1,#c85d89);
+ color:white;font-size:1rem;cursor:pointer;
+ box-shadow:0 7px 14px rgba(200,93,137,.25);
+ transition:transform .2s ease,box-shadow .2s ease
+}
+.music button:hover{
+ transform:scale(1.06);
+ box-shadow:0 9px 18px rgba(200,93,137,.32)
+}
+.music button:focus-visible{
+ outline:3px solid rgba(200,93,137,.3);outline-offset:3px
+}
+.music .mini{
+ width:28px;height:28px;margin-left:auto;
+ background:transparent;color:#a96984;font-size:1.1rem;
+ box-shadow:none;transition:transform .35s ease,background .2s ease
+}
+.music .mini:hover{background:#fff0f6;box-shadow:none}
+.music.min .mini{
+ width:54px;height:46px;margin:0;border-radius:14px;
+ background:linear-gradient(135deg,#ef8db1,#c85d89);
+ color:white;font-size:1.25rem;box-shadow:none;transform:rotate(0deg);
+ flex:0 0 54px;display:grid;place-items:center;
+ line-height:1;padding:0
+}
+.music.min .mini:hover{background:linear-gradient(135deg,#ef8db1,#c85d89)}
+.info{display:flex;flex:1;flex-direction:column;gap:3px;line-height:1.2}
+.info b{font-size:.86rem;color:#7e4962}
+.info small{font-size:.7rem;color:#ae7890}
+.hidden{display:none}
+@media(max-width:700px){
+ .script{font-size:3.4rem}
+ h2{font-size:2.5rem}
+ .hero-card{padding:35px 24px}
+ section{padding:70px 20px}
+ .music{right:14px;bottom:14px}
+}
+</style>
+</head>
+<body>
+
+<div class="petals" id="petals"></div>
+
+<header class="hero">
+<div class="hero-card">
+<div class="script">Para Ti</div>
+<p>Hay veces que no se como expresar lo que siento, asi que mejor te hice algo para que lo veas.</p>
+<a href="#carta" class="btn">Abrir nuestra carta ✿</a>
+</div>
+</header>
+
+<section id="carta">
+<div class="container">
+<div class="card letter">
+<h2>Una carta para ti</h2>
+<p>Mi amor. Estos 6 meses contigo han sido de lo mas hermoso que he vivido, simplemente no puedo expresar lo mucho que siento por ti solo con unas simples palabras, pero espero que este simple regalo te saque por lo menos una sonrisa.
+    Quiero decirte que cada que te miro siento que no necesito nada mas, siento que contigo lo tengo topdo y que todo lo puedo lograr, quiero amarte y que me ames por siempre, que cada dia juntos sea solo un pequeño paso en nuestro largo camino por recorrer.
+    Quiero que sepas que cuando digo que te amo, no es solo una palabra vacia, simplemente es una pequeña parte de lo que puedo expresar al pensar en ti. Te amo mi amor, felices 6 meses <3 </p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="card">
+<h2>Nuestro álbum</h2>
+<div class="gallery">
+<div class="polaroid"><div class="photo"><img src="1000156140.jpg" alt="Recuerdo 1"></div><div class="caption"></div></div>
+<div class="polaroid"><div class="photo"><img src="1000156168.jpg" alt="Recuerdo 2"></div><div class="caption"></div></div>
+<div class="polaroid"><div class="photo"><img src="1000156174.jpg" alt="Recuerdo 3"></div><div class="caption"></div></div>
+<div class="polaroid"><div class="photo"><img src="1000156398.jpg" alt="Recuerdo 4"></div><div class="caption"></div></div>
+<div class="polaroid"><div class="photo"><img src="1000156412.jpg" alt="Recuerdo 5"></div><div class="caption"></div></div>
+<div class="polaroid"><div class="photo"><img src="IMG-20260823-WA0034.jpg" alt="Recuerdo 6"></div><div class="caption"></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="card">
+<h2>Nuestra historia</h2>
+<div class="timeline">
+<div class="moment"><div class="circle"></div><div><b>Cómo empezó todo.</b><p>Todo empezo con algo tan aleatorio que me da risa, y ahora simplemente estamos juntos como si siempre hubiera sido asi.</p></div></div>
+<div class="moment"><div class="circle"></div><div><b>El día que nunca olvidaré.</b><p>Nunca olvidare el dia que nos vimos por primera vez, esas miradas nerviosas y esos ojitos que me miraban sin darme cuenta, simplemente es algo que nunca saldra de mi mente.</p></div></div>
+<div class="moment"><div class="circle"></div><div><b>Todo lo que aún quiero vivir contigo.</b><p>Aun quiero vivir toda una vida contigo, llegar a viejitos y vivir aventuras cada dia contigo.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="card">
+<h2>Pequeñas razones</h2>
+<div class="notes">
+<div class="note" style="--rot:-2deg"> Tu sonrisa.</div>
+<div class="note" style="--rot:2deg"> Tu manera de hacer bonito un día cualquiera.</div>
+<div class="note" style="--rot:-3deg"> Tu compañía.</div>
+<div class="note" style="--rot:3deg"> Todo lo que me haces sentir.</div>
+<div class="note" style="--rot:-1deg"> Los momentos que vivimos juntos.</div>
+<div class="note" style="--rot:2deg"> La forma en la que me haces reir.</div>
+<div class="note" style="--rot:-2deg"> La manera en la que me miras.</div>
+<div class="note" style="--rot:1deg"> La manera que me tocas.</div> 
+<div class="note" style="--rot:1deg"> Lo que siento al mirarte.</div> 
+<div class="note" style="--rot:1deg"> Cuando jugamos juntos.</div> 
+<div class="note" style="--rot:1deg"> Ver pelicuas contigo.</div> 
+<div class="note" style="--rot:1deg"> Dormir juntitos.</div> 
+<div class="note" style="--rot:1deg"> Hacer llamada todas las noches.</div>  
+<div class="note" style="--rot:1deg"> Pensar en el futuro juntos.</div> 
+<div class="note" style="--rot:1deg"> Te amo mucho.</div> 
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="card">
+<h2>Promesas</h2>
+<div class="promise-grid">
+<div class="promise"> Prometo cuidar de tu corazoncito.</div>
+<div class="promise"> Prometo hacerte intentar hacerte reir cuando mas lo necesites.</div>
+<div class="promise"> Prometo estar para ti siempre que quieras.</div>
+<div class="promise"> Prometo seguir amandote hasta que te canses de amarme.</div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="card jar">
+<h2>Un frasco de recuerdos</h2>
+<p>Cada vez que presiones el botón aparecerá un mensaje bonito.</p>
+<div id="memory">Pulsa el botón para abrir un recuerdo.</div>
+<button onclick="randomMemory()">Abrir un recuerdo 💌</button>
+</div>
+</div>
+</section>
+
+<div class="quote">“Hay lugares que se vuelven hogar simplemente porque tú estás ahí.”</div>
+
+<footer>Con cariño, de mi para mi niña hermosa. 💗</footer>
+
+<div class="music" id="widget">
+<button id="playPause" aria-label="Pausar o reproducir la música" title="Pausar o reproducir">▶</button>
+<div class="info" id="info">
+<b>Musiquita</b>
+<small>Musiquita bonita</small>
+</div>
+<button class="mini" id="collapse" aria-label="Minimizar reproductor" title="Minimizar reproductor">→</button>
+
+<audio id="audio" loop autoplay>
+<source src="You.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<script>
+const audio=document.getElementById("audio");
+const play=document.getElementById("playPause");
+const startAudio=()=>{
+ audio.play().catch(()=>{});
+};
+audio.onplay=()=>play.textContent="❚❚";
+audio.onpause=()=>play.textContent="▶";
+window.addEventListener("load",startAudio);
+document.addEventListener("pointerdown",startAudio,{once:true});
+document.addEventListener("keydown",startAudio,{once:true});
+play.onclick=()=>{
+ if(audio.paused){audio.play().catch(()=>{});}
+ else{audio.pause();}
+}
+collapse.onclick=()=>{
+ widget.classList.toggle("min");
+ const minimized=widget.classList.contains("min");
+ collapse.textContent=minimized?"←":"→";
+ collapse.setAttribute("aria-label",minimized?"Abrir reproductor":"Minimizar reproductor");
+ collapse.setAttribute("title",minimized?"Abrir reproductor":"Minimizar reproductor");
+}
+
+const msgs=[
+"Gracias por llegar a mi vida.",
+"Contigo los días tienen un color diferente.",
+"Mi lugar favorito siempre sera contigo.",
+"Quiero estar contigo siempre.",
+"Eres mi pensamiento favorito.",
+"Si volviera en el tiempo, te seguiria eligiendo a ti.",
+"Simplemente gracias por existir.",
+"Te amo mis rulitos.",
+];
+function randomMemory(){
+ memory.textContent=msgs[Math.floor(Math.random()*msgs.length)];
+}
+
+for(let i=0;i<35;i++){
+ let p=document.createElement("div");
+ p.className="petal";
+ p.textContent=Math.random()>.5?"❀":"❤";
+ p.style.left=Math.random()*100+"vw";
+ p.style.fontSize=(12+Math.random()*20)+"px";
+ p.style.animationDuration=(8+Math.random()*10)+"s";
+ p.style.animationDelay=Math.random()*8+"s";
+ petals.appendChild(p);
+}
+</script>
+
+</body>
+</html>
